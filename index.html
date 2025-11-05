@@ -1,0 +1,378 @@
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-[#faf8f4]">
+<div id="loading" class=" fixed z-1500 w-full h-full bg-[white] flex items-center justify-center top-0   ">
+    <div class="relative">
+        <img src="./assets/loading/loading.svg" alt="loading">
+        <div>
+            <p class="absolute top-13 left-9.5 text-[12px] text-[#e5b636]">Loading...</p>
+        </div>
+    </div>
+
+</div>
+    
+
+
+    <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+
+            <div class="flex items-center space-x-3">
+
+                <button id="menuToggle" class="lg:hidden p-2 rounded-md border hover:bg-gray-100">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+
+                <div class="flex items-center space-x-2">
+                    <img src="./img/Group (3).png" alt="logo" class="w-8 h-8">
+                    <p class="font-bold text-lg max-[650px]:hidden text-gray-800">Северяночка</p>
+                </div>
+
+                <button id="catalogToggle" class="hidden lg:flex items-center space-x-2 bg-green-100 text-green-700 font-semibold px-4 py-2 rounded-lg hover:bg-green-200 transition">
+                    <i data-lucide="menu" class="w-5 h-5"></i>
+                    <p>Каталог</p>
+
+                </button>
+            </div>
+            <div class="lg:flex flex-1 mx-6 max-w-[700px] relative w-full ">
+                <input id="input" type="text" placeholder="Найти товар" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none">
+            </div>
+            <div id="search-cards" class="w-full max-w-[550px] border-[1px] border-[#BFBFBF] rounded-[10px] flex flex-col justify-center gap-[10px] hidden max-h-[500px] overflow-y-scroll px-[10px] absolute max-[650px]:left-0  left-1/2 -ml-[300px] max-[650px]:ml-[0px] rounded-b-[4px] max-[650px]top-[110px] top-[50px] py-[15px] bg-[white]">
+
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="hidden lg:flex flex-col items-center text-sm text-[#414141] hover:text-[#FF6633]">
+                    <i data-lucide="heart" class="w-5 h-5"></i>
+                <a href="" class="hover:text-[#FF6633]">Избранное</a>
+                <button class="hidden lg:flex flex-col items-center text-sm text-[#414141] hover:text-[#FF6633]">
+                    <i data-lucide="package" class="w-5 h-5"></i>
+                    <a href="./pages/vseprodukti.html" class="hover:text-[#FF6633]">Заказы</a>
+                </button>
+                <button class="hidden lg:flex flex-col items-center text-sm text-[#FF6633] hover:text-[#FF6633] relative">
+                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    <a href="./pages/korzina.html" class="hover:text-[#FF6633]">Корзина <span id="badge" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-1 rounded-full">0</span></a>
+                </button>
+                <button class="flex items-center space-x-2 hover:bg-gray-100 px-2 py-1 rounded-lg">
+                    <img src="./img/avatar (3).png" alt="user" class="rounded-full w-8 h-8">
+                    <p class="hidden lg:inline text-gray-800 font-medium">Алексей</p>
+                </button>
+            </div>
+        </div>
+
+        <!-- <div class="lg:hidden px-4 pb-3">
+            <input id="input"  type="text" placeholder="Найти товар"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none">
+        </div> -->
+                    <!-- <div class="lg:hidden px-4 pb-3 max-w-[700px] relative w-full ">
+                        <input id="input" type="text" placeholder="Найти товар"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none">
+                    </div> -->
+     
+        <nav id="mobileMenu" class="hidden flex-col bg-white border-t border-gray-200 lg:hidden">
+            <a href="#" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
+                <i data-lucide="menu" class="w-5 h-5"></i>
+                <span>Каталог</span>
+            </a>
+            <a href="#" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
+                <i data-lucide="heart" class="w-5 h-5"></i>
+                <span>Избранное</span>
+            </a>
+            <a href="#" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
+                <i data-lucide="package" class="w-5 h-5"></i>
+                <span>Продукты</span>
+            </a>
+            <a href="#" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
+                <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                <a href="./index.html">Корзина <span class="">0</span></a>
+            </a>
+            <a href="#" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
+                <i data-lucide="user" class="w-5 h-5"></i>
+                <span>Профиль</span>
+            </a>
+        </nav>
+
+        <div id="catalogMenu" class="hidden absolute left-0 w-full bg-white border-t border-gray-200 shadow-lg">
+            <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 p-6 text-gray-700">
+                <a href="" class="hover:text-green-600">Молочные продукты</a>
+                <a href="" class="hover:text-green-600">Мясо и колбасы</a>
+                <a href="" class="hover:text-green-600">Бакалея</a>
+                <a href="" class="hover:text-green-600">Фрукты и овощи</a>
+                <a href="" class="hover:text-green-600">Напитки</a>
+                <a href="" class="hover:text-green-600">Кондитерские изделия</a>
+                <a href="" class="hover:text-green-600">Замороженные продукты</a>
+                <a href="" class="hover:text-green-600">Хлеб и выпечка</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="w-full overflow-hidden bg-cover bg-center text-black" style="background-image: url('./img/Group\ 7100.png');">
+        <div class="max-w-[1200px] mx-auto flex flex-col sm:flex-row justify-start items-center px-2 sm:px-4 py-3 gap-2">
+
+            <img src="./img/img (4).png" alt="savat" class="max-w-full h-auto">
+
+            <span class="text-4xl sm:text-5xl font-semibold text-center sm:text-left">
+                Доставка бесплатно от 1000 ₽
+            </span>
+
+        </div>
+    </div>
+<main class="bg-[#FBF8EC]">
+
+    <section>
+        <div class="container mx-auto py-[90px]">
+            <div class="flex items-center justify-between mx-auto max-w-7xl max-[650px]:px-10 max-[450px]:px-3">
+                <h1 class="text-[36px] font-[700]">Акции</h1>
+                <a class="flex items-center gap-[10px]" href="">
+                    <h1 class="text-2xl  text-green-500">Все продукты</h1>
+                </a>
+            </div>
+
+            <div
+                class="cardlar grid lg:grid-cols-4 sm:grid-cols-2 md:grid-cols-3 2xl:px-[127px] max-[650px]:px-10 max-[450px]:px-3  gap-[30px] flex items-center justify-center">
+                <a id="like-badge" href="">
+                    <img src="./img/Button.png" alt="">
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container mx-auto py-[90px]">
+            <div class="flex items-center justify-between max-w-7xl mx-auto max-[650px]:px-10 max-[450px]:px-3">
+                <h1 class="text-[36px] font-[700]">Новинки</h1>
+                <a class="flex items-center gap-[10px]" href="">
+                    <h1 class="text-2xl  text-green-500">Все продукты</h1>
+                </a>
+            </div>
+
+            <div
+                class="NewProducts grid lg:grid-cols-4 max-[650px]:px-10 max-[450px]:px-3 lg:grid-cols-3 sm:grid-cols-2 gap-[30px] flex items-center justify-center mx-auto max-w-7xl">
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section>
+        <div class="container mx-auto py-[90px]">
+            <div class="flex items-center justify-between mx-auto max-w-7xl max-[650px]:px-10 max-[450px]:px-3">
+                <h1 class="text-[36px] font-[700]">Покупали раньше</h1>
+                <a class="flex items-center gap-[10px]" href="">
+                    <h1 class="text-2xl  text-green-500"">Все продукты</h1>
+                </a>
+            </div>
+
+
+            <div
+                class="RecentlyPurchasedProducts max-[650px]:px-10 max-[450px]:px-3 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2  gap-[30px] flex items-center justify-center mx-auto max-w-7xl mt-[30px]">
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <section>
+        <div class="container mx-auto py-[90px]">
+            <h1 class=" text-[36px] font-[700] max-w-7xl mx-auto">Специальные предложения</h1>
+
+            <div
+                class="gap-[60px] grid lg:grid-cols-2  md:grid-cols-1 mt-[40px] flex items-center justify-center max-w-7xl mx-auto">
+
+                <div
+                    class="flex items-center gap-[30px]  w-[100%] h-[100%] rounded-[8px]  bg-[#CA936080] pl-[20px] transition-transform duration-500 hover:scale-110">
+                    <a href="">
+                        <h1 class="text-[28px] font-[700] leading-[150%]">Оформите карту <br> «Северяночка»</h1>
+                        <p class="font-[400] leading-[150%] text-[22px] text-[#414141] mt-[10px]">И получайте бонусы при
+                            покупке <br> в магазинах и на сайте</p>
+                    </a>
+
+                    <img class="max-w-[100%]  h-[95px] rounded-[10px] rotate-15" src="./img/Карта лояльности-10 1.png" alt="">
+                </div>
+
+
+                <div
+                    class="flex items-center gap-[30px] w-[100%] h-[100%] rounded-[8px]  bg-[#E5FFDE] pl-[50px] transition-transform duration-500 hover:scale-110">
+                    <a href="">
+                        <h1 class="text-[24px] font-[700] leading-[150%]">Покупайте <br> акционные товары</h1>
+                        <p class="font-[400] leading-[150%] text-[22px] text-[#414141] mt-[10px]">И получайте вдвое
+                            больше <br> бонусов</p>
+                    </a>
+                        <img class="max-w-[100%]  h-[95px] rounded-[10px] rotate-15" src="./img/73 1.png" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section>
+        <div class="container mx-auto py-[90px] px-[30px] lg:px-[130px]">
+            <h1 class=" mb-[40px] text-[36px] text-[#414141] font-bold ">
+                Наши магазины
+            </h1>
+
+            <div class=" grid grid-cols-2 sm:grid-cols-4 max-w-[500px] w-full gap-[50px] ">
+                <a href="#" class="group mb-[10px] border border-[#70C05B] text-center w-[120px] cursor-pointer py-2 
+                            hover:bg-[#70C05B] duration-500 hover:border-[#70C05B] rounded-md block">
+                    <span class="text-[#70C05B] group-hover:text-white block">
+                        п.Щельяюр
+                    </span>
+                </a>
+
+                <a href="#" class="group mb-[10px] border border-[#70C05B] text-center w-[120px] cursor-pointer py-2 
+                            hover:bg-[#70C05B] duration-500 hover:border-[#70C05B] rounded-md block">
+                    <span class="text-[#70C05B] group-hover:text-white block">
+                        д.Вертеп
+                    </span>
+                </a>
+
+                <a href="#" class="group mb-[10px] border border-[#70C05B] text-center w-[130px] cursor-pointer py-2 
+                            hover:bg-[#70C05B] duration-500 hover:border-[#70C05B] rounded-md block">
+                    <span class="text-[#70C05B] group-hover:text-white block">
+                        с.Краснобор
+                    </span>
+                </a>
+
+                <a href="#" class="group mb-[10px] border border-[#70C05B] text-center w-[97px] cursor-pointer py-2 
+                            hover:bg-[#70C05B] duration-500 hover:border-[#70C05B] rounded-md block">
+                    <span class="text-[#70C05B] group-hover:text-white block">
+                        д.Диюр
+                    </span>
+                </a>
+            </div>
+
+
+            <div class="container mx-auto py-[50px] px-[20px]">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95856.27875275856!2d69.08990621566772!3d41.341295333914104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8d041328b297%3A0x61846eff374bdec1!2sOqtepa%20Lavash%20%E2%80%93%20Nurafshon!5e0!3m2!1suz!2s!4v1760006557758!5m2!1suz!2s"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <div class="container mx-auto py-[90px]">
+
+            <div class="flex items-center justify-between mx-auto max-w-7xl">
+                <h1 class="text-[36px] font-[700]">Статьи</h1>
+                <a class="flex items-center gap-[10px]" href="">
+                    <h1 class="md:block hidden text-2xl font-bold text-gray-900">Все продукты</h1>
+                </a>
+            </div>
+
+            <div
+                class="grid lg:grid-cols-3 md:grid-cols-2 gap-[60px] mt-[60px] flex items-center justify-center mx-auto max-w-7xl">
+                <div
+                    class="w-[100%] h-[100%] bg-[white]  flex flex-col justify-between h-full pb-[15px] transition-transform duration-500 hover:scale-110">
+                    <img class="max-w-[100%] h-[180px] object-cover " src="./img/image 5 (3).png" alt="">
+                    <b class="text-[20px] font-[400] text-[#8F8F8F] ml-[10px] mt-[10px]">05.03.2021</b>
+                    <h1 class="font-[700]  text-[22px] leading-[150%] mt-[10px] ml-[10px]">Режим использования масок и
+                        <br> перчаток на территории магазинов</h1>
+                    <p class="font-[400] leading-[150%] text-[22px] text-[#414141] mt-[10px] ml-[10px]">Подробная
+                        информация о режимах <br> использования масок и перчаток на <br> территории магазинов "ЛЕНТА".
+                        Информация <br> обновляется каждый будний день.</p>
+                    <button
+                        class="font-[400] text-[#70C05B] w-[200px] h-[40px] rounded-[5px] bg-[#E5FFDE] cursor-pointer mt-[15px] ml-[10px] hover:bg-[#70C05B] hover:text-[white]">Подробнее</button>
+                </div>
+
+                <div
+                    class="w-[100%]] h-[100%] bg-[white] flex flex-col justify-between h-full pb-[13px] transition-transform duration-500 hover:scale-110">
+                    <img class="max-w-[100%] h-[180px] object-cover" src="./img/image 5 (4).png" alt="">
+                    <b class="text-[20px] font-[400] text-[#8F8F8F] ml-[10px] mt-[10px]">05.03.2021</b>
+                    <h1 class="font-[700]  text-[22px] leading-[150%] mt-[10px] ml-[10px]">Весеннее настроение для
+                        каждой</h1>
+                    <p class="font-[400] leading-[150%] text-[20px] text-[#414141] mt-[10px] ml-[10px]">8 Марта – это не
+                        просто Международный <br> женский день, это ещё день тюльпанов, <br> приятных сюрпризов и
+                        праздничных тёплых <br> пожеланий.</p>
+                    <button
+                        class="font-[400] text-[#70C05B] w-[200px] h-[40px] rounded-[5px] bg-[#E5FFDE] cursor-pointer mt-[43px] ml-[10px] hover:bg-[#70C05B] hover:text-[white]">Подробнее</button>
+                </div>
+
+
+                <div
+                    class="w-[100%] h-[100%] bg-[white] flex flex-col justify-between h-full pb-[15px] transition-transform duration-500 hover:scale-110">
+                    <img class="max-w-[100%] h-[180px] object-cover" src="./img/image 5 (5).png" alt="">
+                    <b class="text-[20px] font-[400] text-[#8F8F8F] ml-[10px] mt-[10px]">22.02.2020</b>
+                    <h1 class="font-[700]  text-[22px] leading-[150%] mt-[10px] ml-[10px]">ЗОЖ или ФАСТФУД. А вы на чьей
+                        <br> стороне? Голосуем!</h1>
+                    <p class="font-[400] leading-[150%] text-[18px] text-[#414141] mt-[10px] ml-[10px]">Голосуйте за
+                        любимые категории, выбирайте <br> категорию-победителя в мобильном <br> приложении и получайте
+                        кешбэк 10% <br> баллами в апреле!</p>
+                    <button
+                        class="font-[400] text-[#70C05B] w-[200px] h-[40px] rounded-[5px] bg-[#E5FFDE] cursor-pointer mt-[15px] ml-[10px] hover:bg-[#70C05B] hover:text-[white]">Подробнее</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+ 
+   <footer class="bg-[#fff9f0] border-t border-gray-200 mt-10 bg-cover bg-center" style="background-image: url('./img/bg.png');">
+  <div class="max-w-[1200px] mx-auto px-4 py-10">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+
+      <div class="flex items-center gap-3">
+        <img src="./img/logo (3).png" alt="Logo" class="w-14 h-14 object-contain">
+      </div>
+
+      <ul class="flex flex-col sm:flex-row flex-wrap justify-center md:justify-center gap-4 sm:gap-6 text-gray-700 text-sm font-medium text-center">
+        <li><a href="./pages/o nas.html" class="hover:text-black transition">О компании</a></li>
+        <li><a href="./pages/kontakti.html" class="hover:text-black transition">Контакты</a></li>
+        <li><a href="./pages/vakansiya.html" class="hover:text-black transition">Вакансии</a></li>
+        <li><a href="./pages/katalog.html" class="hover:text-black transition">Соглашение</a></li>
+        <li><a href="./pages/dannix.html" class="hover:text-black transition">Политика обработки персональных данных</a></li>
+      </ul>
+
+      <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+        <div class="flex items-center gap-4 text-gray-700">
+          <i data-lucide="facebook" class="w-5 h-5 hover:text-black transition"></i>
+          <i data-lucide="instagram" class="w-5 h-5 hover:text-black transition"></i>
+          <i data-lucide="youtube" class="w-5 h-5 hover:text-black transition"></i>
+          <i data-lucide="twitter" class="w-5 h-5 hover:text-black transition"></i>
+        </div>
+        <img src="./img/Vector 188 (Stroke).png" alt="">
+        <p class="font-semibold text-gray-900  text-[18px]">8 800 777 33 33</p>
+      </div>
+    </div>
+    <div class=" lg:ml-[1000px] flex flex-col  sm:flex-row items-center gap-4 sm:gap-6  ">
+        <p class=" text-gray-900 text-base">Дизайн</p>
+        <img class="max-w-[100px] h-[10px] max-w-full mt-2" src="./img/logo-zasovskiy-small-black.png" alt="">
+    </div>
+  </div>
+</footer>
+
+    <script src="./products-data/products-data.js"></script>
+  <script src="./jc/index.js"></script>
+    <script src="./jc/main.js"></script>
+    <script src="./jc/search.js"></script>
+<script>
+    lucide.createIcons();
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    const catalogToggle = document.getElementById('catalogToggle');
+    const catalogMenu = document.getElementById('catalogMenu');
+    catalogToggle?.addEventListener('click', () => {
+ catalogMenu.classList.toggle('hidden');
+    });
+
+</script>
+</body>
+
+</html>
