@@ -12,11 +12,8 @@
         <div id="loading" class=" fixed z-1500 w-full h-full bg-[white] flex items-center justify-center top-0   ">
             <div class="relative">
                 <img src="../assets/loading/loading.svg" alt="loading">
-                <div>
-                    <p class="absolute top-13 left-9.5 text-[12px] text-[#e5b636]">Loading...</p>
-                </div>
+                
             </div>
-    
         </div>
     <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
         <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
@@ -29,7 +26,7 @@
     
                 <div class="flex items-center space-x-2">
                     <img src="../img/Group (3).png" alt="logo" class="w-8 h-8">
-                    <p class="font-bold text-lg max-[650px]:hidden text-gray-800">Северяночка</p>
+                    <a href="../index.html" class="font-bold text-lg max-[650px]:hidden text-gray-800">Северяночка</a>
                 </div>
     
                 <button id="catalogToggle"
@@ -129,10 +126,11 @@
             
                 <div class="flex justify-between items-center text-sm mb-4 mt-[50px]">
                     <div class="flex items-center gap-4">
-                        <label class="flex items-center gap-2 cursor-pointer">
-                            <input type="checkbox" class="w-4 h-4 accent-green-600" />
-                            <p>Выделить всё</p>
-                        </label>
+                       <div  class="flex items-center gap-2 cursor-pointer">
+                       
+                        <input id="all-input" type="checkbox" class="w-4 h-4 accent-green-600 w-10" />
+                        <label for="all-input" class="flex items-center gap-2 cursor-pointer ">Выделить всё</label>
+                       </div>
                         <h2 id="checked-all" class="text-[#FF6633] hover:text-[#FF6633] transition">Удалить выбранные</h2>
                     </div>
                 </div>
@@ -331,7 +329,7 @@
             </footer>
             <script src="../products-data/products-data.js"></script>
             <script src="../jc/search.js"></script>
-            <script src="../jc/korzina.js"></script>
+            <script src="../jc/karzina.js"></script>
             <script src="../jc/main.js"></script>
 
 <script>

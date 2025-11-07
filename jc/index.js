@@ -1,12 +1,41 @@
-
-
+let innermodal = document.getElementById("inner-modal");
+let form  = document.getElementById("form");
+let formmodal = document.getElementById("form-modal");
+let profilObj = JSON.parse(localStorage.getItem("profil")  || "{}")
+let profiltitle = document.getElementById("profil-title");
+let profilimg = document.getElementById("profil-img");
 let cardlar = document.querySelector(".cardlar");
-
+let profil = document.getElementById("profile");
 let cart = JSON.parse(localStorage.getItem("carts") || "[]");
 let badge = document.getElementById("badge");
-localStorage.setItem("carts", JSON.stringify(cart))
+localStorage.setItem("carts", JSON.stringify(cart));
 badge.textContent = cart.length;
 
+
+
+profil.addEventListener("click", function(){
+  formmodal.classList.remove("hidden")
+})
+formmodal.addEventListener("click", function(){
+  formmodal.classList.add("hidden")
+})
+innermodal.addEventListener("click", function(e){
+  e.stopImmediatePropagation();
+})
+
+form.addEventListener("submit", function(e){
+e.preventDefault();
+console.log(e.target[0].value);
+  console.log(e.target[1].value);
+  console.log(e.target[2].value);
+  profilimg.src = e.target[0].value;
+  profiltitle.textContent = e.target[1].value;
+  profilObj.urlPhoto = e.target[0].value;
+  profilObj.name = e.target[1].value;
+  profilObj.phone = e.target[2].value;
+  localStorage.setItem("profil", JSON.stringify(profilObj))
+  formmodal.classList.add("hidden");
+})
 
 let likeBadge = document.getElementById("like-badge");
 let like = JSON.parse(localStorage.getItem("likes") || "[]");
@@ -43,7 +72,9 @@ function showProducts(content, data) {
       }
    
 
+                      <a href="../pages/tovar.html?id=${el.id}">
                       <img class=" w-full object-cover  h-[240px] mx-auto" src="${el.images[0]}" alt=""/>
+                      </a>
                      <p class=" relative bottom-10 ml-[15px]  max-w-[70px] h-[36px] rounded-[10px] bg-[#FF6633] text-white flex items-center justify-center transition-transform duration-500 hover:scale-110">-${el.discount}%</p>
                     <div class="flex items-center justify-between px-3 mt-[-20px]" href="">
                        <h1 class="text-[20px] font-bold">${el.price}₽</h1>

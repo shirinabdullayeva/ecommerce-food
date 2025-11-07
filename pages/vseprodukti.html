@@ -23,60 +23,77 @@
 
             <div class="flex items-center space-x-2">
                 <img src="../img/Group (3).png" alt="logo" class="w-8 h-8">
-                <p class="font-bold text-lg text-gray-800">Северяночка</p>
+                <a href="../index.html" class="font-bold text-lg max-[650px]:hidden text-gray-800">Северяночка</a>
             </div>
 
             <button id="catalogToggle"
                 class="hidden lg:flex items-center space-x-2 bg-green-100 text-green-700 font-semibold px-4 py-2 rounded-lg hover:bg-green-200 transition">
                 <i data-lucide="menu" class="w-5 h-5"></i>
                 <p>Каталог</p>
+
             </button>
         </div>
-
-        <div class="hidden lg:flex flex-1 mx-6">
-            <input type="text" placeholder="Найти товар" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none">
+        <div class="lg:flex flex-1 mx-6 max-w-[700px] relative w-full ">
+            <input id="input" type="text" placeholder="Найти товар"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none">
         </div>
+        <div id="search-cards"
+            class="w-full max-w-[550px] border-[1px] border-[#BFBFBF] rounded-[10px] flex flex-col justify-center gap-[10px] hidden max-h-[500px] overflow-y-scroll px-[10px] absolute max-[650px]:left-0  left-1/2 -ml-[300px] max-[650px]:ml-[0px] rounded-b-[4px] max-[650px]top-[110px] top-[50px] py-[15px] bg-[white]">
 
+        </div>
         <div class="flex items-center space-x-4">
             <button class="hidden lg:flex flex-col items-center text-sm text-[#414141] hover:text-[#FF6633]">
                 <i data-lucide="heart" class="w-5 h-5"></i>
-                <a href="../pages/kategori.html" class="hover:text-[#FF6633]">Избранное</a>
-            </button>
-            <button class="hidden lg:flex flex-col items-center text-sm text-[#414141] hover:text-[#FF6633]">
-                <i data-lucide="package" class="w-5 h-5"></i>
-                <a href="../pages/vseprodukti.html" class="hover:text-[#FF6633]">Заказы</a>
-            </button>
-            <button class="hidden lg:flex flex-col items-center text-sm text-[#FF6633] hover:text-[#FF6633] relative">
-                <i data-lucide="shopping-cart" class="w-5 h-5"></i>
-                <a href="../pages/korzina.html" class="hover:text-[#FF6633]">Корзина</a>
-                <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-1 rounded-full">2</span>
-            </button>
-            <button class="flex items-center space-x-2 hover:bg-gray-100 px-2 py-1 rounded-lg">
-                <img src="../img/avatar (3).png" alt="user" class="rounded-full w-8 h-8">
-                <p class="hidden lg:inline text-gray-800 font-medium">Алексей</p>
-            </button>
+                <a href="" class="hover:text-[#FF6633]">Избранное</a>
+                <button class="hidden lg:flex flex-col items-center text-sm text-[#414141] hover:text-[#FF6633]">
+                    <i data-lucide="package" class="w-5 h-5"></i>
+                    <a href="../pages/vseprodukti.html" class="hover:text-[#FF6633]">Заказы</a>
+                </button>
+                <button
+                    class="hidden lg:flex flex-col items-center text-sm text-[#FF6633] hover:text-[#FF6633] relative">
+                    <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                    <a href="../pages/korzina.html" class="hover:text-[#FF6633]">Корзина <span id="badge"
+                            class="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-1 rounded-full">0</span></a>
+                </button>
+                <button class="flex items-center space-x-2 hover:bg-gray-100 px-2 py-1 rounded-lg">
+                    <img src="../img/avatar (3).png" alt="user" class="rounded-full w-8 h-8">
+                    <p class="hidden lg:inline text-gray-800 font-medium">Алексей</p>
+                </button>
         </div>
     </div>
-    <div class="lg:hidden px-4 pb-3">
-        <input type="text" placeholder="Найти товар" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none">
-    </div>
+
+    <!-- <div class="lg:hidden px-4 pb-3">
+                        <input id="input"  type="text" placeholder="Найти товар"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none">
+                    </div> -->
+    <!-- <div class="lg:hidden px-4 pb-3 max-w-[700px] relative w-full ">
+                                    <input id="input" type="text" placeholder="Найти товар"
+                                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none">
+                                </div> -->
+
     <nav id="mobileMenu" class="hidden flex-col bg-white border-t border-gray-200 lg:hidden">
         <a href="#" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
-            <i data-lucide="menu" class="w-5 h-5"></i><span>Каталог</span>
+            <i data-lucide="menu" class="w-5 h-5"></i>
+            <span>Каталог</span>
         </a>
         <a href="#" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
-            <i data-lucide="heart" class="w-5 h-5"></i><span>Избранное</span>
+            <i data-lucide="heart" class="w-5 h-5"></i>
+            <span>Избранное</span>
         </a>
         <a href="#" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
-            <i data-lucide="package" class="w-5 h-5"></i><span>Продукты</span>
+            <i data-lucide="package" class="w-5 h-5"></i>
+            <span>Продукты</span>
         </a>
         <a href="#" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
-            <i data-lucide="shopping-cart" class="w-5 h-5"></i><span>Корзина</span>
+            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+            <a href="../index.html">Корзина <span class="">0</span></a>
         </a>
         <a href="#" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
-            <i data-lucide="user" class="w-5 h-5"></i><span>Профиль</span>
+            <i data-lucide="user" class="w-5 h-5"></i>
+            <span>Профиль</span>
         </a>
     </nav>
+
     <div id="catalogMenu" class="hidden absolute left-0 w-full bg-white border-t border-gray-200 shadow-lg">
         <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 p-6 text-gray-700">
             <a href="" class="hover:text-green-600">Молочные продукты</a>
@@ -99,7 +116,9 @@
             </div>
         
             <div id="vseProducti" class="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-        
+        <a id="like-badge" href="">
+            <img src="../img/Button.png" alt="">
+        </a>
              
             </div>
         </section>
@@ -155,7 +174,7 @@
     <script src="../products-data/products-data.js"></script>
     <script src="../jc/search.js"></script>
     <script src="../jc/vseproducti.js"></script>
-    <script src="../jc/main.js"></script>
+  
     
    <script>
     lucide.createIcons();
