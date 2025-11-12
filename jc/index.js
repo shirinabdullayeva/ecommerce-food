@@ -103,11 +103,11 @@ function showProducts(content, data) {
                         <img src="../assets/stars/star (2).png" alt="Rating star">
             `
           : el.rating === 4 ? `
-              <img src="../assets/stars/star.png" alt="Rating star">
+             <img src="../assets/stars/star.png" alt="Rating star">
                         <img src="../assets/stars/star.png" alt="Rating star">
                         <img src="../assets/stars/star.png" alt="Rating star">
                         <img src="../assets/stars/star.png" alt="Rating star">
-                        <img src="../assets/stars/star (1).png" alt="Rating star">
+                        <img src="../assets/stars/star (2).png" alt="Rating star">
             `
             : el.rating === 3.5 ? `
                          <img src="../assets/stars/star.png" alt="Rating star">
@@ -166,7 +166,7 @@ function showProducts(content, data) {
                         <img src="../assets/stars/star (1).png" alt="Rating star">
             `
   }
-        </div class="mt-5">
+        </div>
 
                         
                         ${cart.find((items) => items.id === el.id)

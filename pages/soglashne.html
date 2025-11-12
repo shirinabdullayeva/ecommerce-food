@@ -1,155 +1,191 @@
-<html lang="ru">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-
+    <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="./css/stayle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+        integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="bg-[#faf8f4]">
+<body>
 
-    <body>
-        <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-gray-100">
-            <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
-        
-                <div class="flex items-center space-x-3">
-        
-                    <button id="menuToggle" class="lg:hidden p-2 rounded-md border hover:bg-gray-100">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-        
-                    <div class="flex items-center space-x-2">
-                        <img src="../img/Group (3).png" alt="logo" class="w-8 h-8">
-                        <p class="font-bold text-lg text-gray-800">Северяночка</p>
-                    </div>
-        
-                    <button id="catalogToggle"
-                        class="hidden lg:flex items-center space-x-2 bg-green-100 text-green-700 font-semibold px-4 py-2 rounded-lg hover:bg-green-200 transition">
-                        <i data-lucide="menu" class="w-5 h-5"></i>
-                        <p>Каталог</p>
-                    </button>
-                </div>
-        
-                <div class="hidden lg:flex flex-1 mx-6">
-                    <input type="text" placeholder="Найти товар" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none">
-                </div>
-        
-                <div class="flex items-center space-x-4">
-                    <button class="hidden lg:flex flex-col items-center text-sm text-[#414141] hover:text-[#FF6633]">
-                        <i data-lucide="heart" class="w-5 h-5"></i>
-                        <a href="../pages/kategori.html" class="hover:text-[#FF6633]">Избранное</a>
-                    </button>
-                    <button class="hidden lg:flex flex-col items-center text-sm text-[#414141] hover:text-[#FF6633]">
-                        <i data-lucide="package" class="w-5 h-5"></i>
-                        <a href="../pages/vseprodukti.html" class="hover:text-[#FF6633]">Заказы</a>
-                    </button>
-                    <button class="hidden lg:flex flex-col items-center text-sm text-[#FF6633] hover:text-[#FF6633] relative">
-                        <i data-lucide="shopping-cart" class="w-5 h-5"></i>
-                        <a href="../pages/korzina.html" class="hover:text-[#FF6633]">Корзина</a>
-                        <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs px-1 rounded-full">2</span>
-                    </button>
-                    <button class="flex items-center space-x-2 hover:bg-gray-100 px-2 py-1 rounded-lg">
-                        <img src="../img/avatar (3).png" alt="user" class="rounded-full w-8 h-8">
-                        <p class="hidden lg:inline text-gray-800 font-medium">Алексей</p>
-                    </button>
-                </div>
+  
+
+    <header class="py-[16px] bg-[white] fixed z-[100] w-full shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
+        <div class="container mx-auto px-[20px] gap-[40px] 2xl:px-[127px] flex items-center justify-between">
+            <div>
+                <a class="flex items-center gap-[11px]" href="../index.html">
+                    <svg width="40" height="32" viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M35.6689 16.819H4.28623C3.62872 16.819 3.09179 17.3764 3.15209 18.0343C3.84119 25.8488 11.1112 31.9999 19.9776 31.9999C28.844 31.9999 36.1139 25.8517 36.803 18.0343C36.8605 17.3764 36.3264 16.819 35.6689 16.819Z"
+                            fill="#FF6633" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M0.225147 3.33137C1.7887 1.27854 4.60645 0 7.711 0C10.8155 0 13.6333 1.27854 15.1969 3.33137C15.5659 3.81589 15.4714 4.50716 14.9858 4.87537C14.5001 5.24357 13.8073 5.14928 13.4383 4.66476C12.3661 3.25707 10.2569 2.20377 7.711 2.20377C5.16509 2.20377 3.05591 3.25707 1.98374 4.66476C1.6147 5.14928 0.921857 5.24357 0.436236 4.87537C-0.0493858 4.50716 -0.143894 3.81589 0.225147 3.33137Z"
+                            fill="#414141" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M24.7671 3.33137C26.3307 1.27854 29.1484 0 32.253 0C35.3552 0 38.1721 1.27884 39.7381 3.33045C40.1077 3.81458 40.0139 4.50596 39.5287 4.87467C39.0434 5.24338 38.3505 5.14981 37.981 4.66568C36.9055 3.25676 34.7955 2.20377 32.253 2.20377C29.7071 2.20377 27.5979 3.25707 26.5257 4.66476C26.1567 5.14928 25.4638 5.24357 24.9782 4.87537C24.4926 4.50716 24.3981 3.81589 24.7671 3.33137Z"
+                            fill="#414141" />
+                    </svg>
+                    <p class="hidden sm:flex font-bold">СЕВЕРЯНОЧКА</p>
+                </a>
             </div>
-        
-            <div class="lg:hidden px-4 pb-3">
-                <input type="text" placeholder="Найти товар"
-                    class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:outline-none">
-            </div>
-            <nav id="mobileMenu" class="hidden flex-col bg-white border-t border-gray-200 lg:hidden">
-                <a href="" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
-                    <i data-lucide="menu" class="w-5 h-5"></i><span>Каталог</span>
-                </a>
-                <a href="" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
-                    <i data-lucide="heart" class="w-5 h-5"></i><span>Избранное</span>
-                </a>
-                <a href="" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
-                    <i data-lucide="package" class="w-5 h-5"></i><span>Продукты</span>
-                </a>
-                <a href="" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
-                    <i data-lucide="shopping-cart" class="w-5 h-5"></i><span>Корзина</span>
-                </a>
-                <a href="" class="px-6 py-3 hover:bg-gray-100 flex items-center space-x-2">
-                    <i data-lucide="user" class="w-5 h-5"></i><span>Профиль</span>
-                </a>
-            </nav>
-        
-            <div id="catalogMenu" class="hidden absolute left-0 w-full bg-white border-t border-gray-200 shadow-lg">
-                <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 p-6 text-gray-700">
-                    <a href="" class="hover:text-green-600">Молочные продукты</a>
-                    <a href="" class="hover:text-green-600">Мясо и колбасы</a>
-                    <a href="" class="hover:text-green-600">Бакалея</a>
-                    <a href="" class="hover:text-green-600">Фрукты и овощи</a>
-                    <a href="" class="hover:text-green-600">Напитки</a>
-                    <a href="" class="hover:text-green-600">Кондитерские изделия</a>
-                    <a href="" class="hover:text-green-600">Замороженные продукты</a>
-                    <a href="" class="hover:text-green-600">Хлеб и выпечка</a>
+            <div class="flex items-start cursor-pointer gap-[20px]">
+                 <div id="menus-category"
+                    class="flex hidden sm:flex w-[140px]  rounded-[5px] h-[40px] justfiy-between pl-[8px] pr-[15px] gap-[20px] items-center bg-[#70C05B]">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#ffff">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg>
+                    <p class="text-[white]">Каталог</p>
+                </div> 
+                <div id="menus-category-close"
+                    class="category-close flex hidden sm:flex w-[140px]  rounded-[5px] h-[40px] justfiy-between pl-[8px] pr-[15px] gap-[20px] items-center bg-[#70C05B]">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#ffff">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg>
+                    <p class="text-[white]">Каталог</p>
                 </div>
-            </div>
-        </header>
-        <main>
-            <section>
-                
-            </section>
-        <footer class="bg-[#fff9f0] border-t border-gray-200  bg-cover bg-center"
-            style="background-image: url('../img/bg.png');">
-            <div class="max-w-[1200px] mx-auto px-4 py-10">
-                <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex sm:hidden gap-[7px] items-center">
 
-                    <div class="flex items-center gap-3">
-                        <img src="../img/logo (3).png" alt="Logo" class="w-14 h-14 object-contain">
-                    </div>
-
-                    <ul
-                        class="flex flex-col sm:flex-row flex-wrap justify-center md:justify-center gap-4 sm:gap-6 text-gray-700 text-sm font-medium text-center">
-                        <li><a href="#" class="hover:text-black transition">О компании</a></li>
-                        <li><a href="#" class="hover:text-black transition">Контакты</a></li>
-                        <li><a href="#" class="hover:text-black transition">Вакансии</a></li>
-                        <li><a href="#" class="hover:text-black transition">Соглашение</a></li>
-                        <li><a href="#" class="hover:text-black transition">Политика обработки персональных данных</a>
-                        </li>
-                    </ul>
-
-                    <div class="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-                        <div class="flex items-center gap-4 text-gray-700">
-                            <i data-lucide="facebook" class="w-5 h-5 hover:text-black transition"></i>
-                            <i data-lucide="instagram" class="w-5 h-5 hover:text-black transition"></i>
-                            <i data-lucide="youtube" class="w-5 h-5 hover:text-black transition"></i>
-                            <i data-lucide="twitter" class="w-5 h-5 hover:text-black transition"></i>
+                    <a href="Pages/search.html">
+                        <img src="./assets/header/search2.svg" alt="search">
+                    </a>
+                </div>
+                <div class="hidden md:flex">
+                    <div class="relative w-[460px]">
+                        <input id="search-input"
+                            class="border-[1px] bg-white border-[#BFBFBF] w-full py-[6px] rounded-[8px] pl-[34px] pr-[10px] cursor-pointer outline-none"
+                            placeholder="Найти товар" type="search">
+                        <img class="absolute top-2 left-2" src="./assets/header/search2.svg" alt="search">
+                        <div id="search-cards"
+                            class="w-full flex border-[1px] border-[#BFBFBF] rounded-[10px] flex-col gap-[10px] hidden max-h-[500px] overflow-y-scroll px-[10px] absolute rounded-b-[4px] top-[50px] py-[15px] bg-[white]">
                         </div>
-                        <img src="../img/Vector 188 (Stroke).png" alt="">
-                        <p class="font-semibold text-gray-900  text-[18px]">8 800 777 33 33</p>
                     </div>
-                </div>
-                <div class="hidden  lg:ml-[1000px] flex flex-col  sm:flex-row items-center gap-4 sm:gap-6  ">
-                    <p class=" text-gray-900 text-base">Дизайн</p>
-                    <img class="max-w-[100px] h-[10px] max-w-full mt-2" src="../img/logo-zasovskiy-small-black.png"
-                        alt="">
+
                 </div>
             </div>
-        </footer>
-        </main>
-      <script>
-        lucide.createIcons();
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileMenu = document.getElementById('mobileMenu');
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+            <div class=" hidden xl:flex  flex items-center gap-[24px] text-[12px]">
+                <a href="./Pages/like.html" class="flex relative cursor-pointer items-center flex-col gap-[7px]">
+                    <img src="./assets/images/layk/heart-1.svg" alt="heart">
+                    <span id="like-badge"
+                        class="absolute top-[-5px] left-[35px] w-[11.28px] h-[11px] bg-[#FF6633] text-white rounded-[4px] flex items-center justify-center px-[4px] py-[2px] text-[9px]">0</span>
+                    <p>Избранное</p>
+                </a>
+                <a href="./Pages/filter.html" class="flex cursor-pointer items-center flex-col gap-[7px]">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M11.3325 1.89776C11.3324 1.89785 11.3327 1.89767 11.3325 1.89776L3.33366 5.89721L3.33255 5.89776C2.82288 6.15102 2.50045 6.67089 2.50005 7.24V16.7635C2.49608 17.3334 2.81541 17.8563 3.32416 18.113C3.32387 18.1129 3.32445 18.1132 3.32416 18.113L11.3237 22.1128C11.7462 22.3242 12.2438 22.3243 12.6663 22.1129L20.6664 18.1128L20.6675 18.1122C21.1773 17.8589 21.4997 17.3389 21.5 16.7697V7.24026C21.4997 6.67105 21.1773 6.15106 20.6675 5.89776L20.6664 5.89721L12.6675 1.89776C12.6674 1.89767 12.6677 1.89786 12.6675 1.89776C12.2474 1.6892 11.7527 1.68919 11.3325 1.89776ZM10.8875 1.00223C11.5883 0.654 12.4118 0.654 13.1125 1.00223L13.1137 1.00278L21.1125 5.00223C21.1124 5.00215 21.1127 5.00231 21.1125 5.00223C21.9618 5.42448 22.4995 6.29123 22.5 7.23973V16.77C22.4995 17.7184 21.9624 18.5852 21.1132 19.0074C21.113 19.0075 21.1134 19.0073 21.1132 19.0074L13.1138 23.0071C13.1138 23.0072 13.1138 23.0071 13.1138 23.0071C12.4097 23.3594 11.5806 23.3595 10.8764 23.0072C10.8764 23.0072 10.8765 23.0072 10.8764 23.0072L2.87644 19.0072L2.87506 19.0065C2.02685 18.5791 1.49413 17.708 1.50005 16.7584V7.24C1.50055 6.29154 2.03772 5.4248 2.88695 5.00253C2.88675 5.00263 2.88715 5.00243 2.88695 5.00253L10.8864 1.00278L10.8875 1.00223Z"
+                            fill="#414141" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M1.87321 5.93638C1.9967 5.6894 2.29704 5.58928 2.54403 5.71278L12.0004 10.441L21.4568 5.71278C21.7038 5.58928 22.0041 5.6894 22.1276 5.93638C22.2511 6.18337 22.151 6.48371 21.904 6.6072L12.224 11.4472C12.0833 11.5176 11.9176 11.5176 11.7768 11.4472L2.09682 6.6072C1.84983 6.48371 1.74971 6.18337 1.87321 5.93638Z"
+                            fill="#414141" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12 10.5C12.2761 10.5 12.5 10.7239 12.5 11V22.76C12.5 23.0361 12.2761 23.26 12 23.26C11.7239 23.26 11.5 23.0361 11.5 22.76V11C11.5 10.7239 11.7239 10.5 12 10.5Z"
+                            fill="#414141" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.5529 3.27638C6.67639 3.02939 6.97673 2.92928 7.22372 3.05277L17.2237 8.05277C17.4707 8.17627 17.5708 8.4766 17.4473 8.72359C17.3238 8.97058 17.0235 9.0707 16.7765 8.9472L6.7765 3.9472C6.52951 3.82371 6.4294 3.52337 6.5529 3.27638Z"
+                            fill="#414141" />
+                    </svg>
+                    <p>Products</p>
+                </a>
+                <a href="Pages/category.html" class="flex cursor-pointer items-center flex-col gap-[7px]">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#414141">
+                        <path
+                            d="M360-240h440v-107H360v107ZM160-613h120v-107H160v107Zm0 187h120v-107H160v107Zm0 186h120v-107H160v107Zm200-186h440v-107H360v107Zm0-187h440v-107H360v107ZM160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Z" />
+                    </svg>
+                    <p>Category</p>
+                </a>
+                <a href="./Pages/cart.html">
+                    <div class="flex cursor-pointer relative items-center flex-col gap-[7px]">
+                        <img src="./assets/header/shopping-cart.svg" alt="shopping-cart">
+                        <span id="badge"
+                            class="absolute top-[-5px] left-[30px] w-[11.28px] h-[11px] bg-[#FF6633] text-white rounded-[4px] flex items-center justify-center px-[4px] py-[2px] text-[9px]">0</span>
+                        <p>Корзина</p>
+                    </div>
+                </a>
+            </div>
+            <div id="profile" class="hidden lg:flex flex items-center cursor-pointer gap-[5px]">
+                <img id="profile-img" class="w-[40px] h-[40px]" src="./assets/single/Profile-PNG-File.png" alt="avatar">
+                <p id="profile-title">Профиль</p>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.64645 8.64645C5.84171 8.45118 6.15829 8.45118 6.35355 8.64645L12 14.2929L17.6464 8.64645C17.8417 8.45118 18.1583 8.45118 18.3536 8.64645C18.5488 8.84171 18.5488 9.15829 18.3536 9.35355L12.3536 15.3536C12.1583 15.5488 11.8417 15.5488 11.6464 15.3536L5.64645 9.35355C5.45118 9.15829 5.45118 8.84171 5.64645 8.64645Z"
+                        fill="#414141" />
+                </svg>
+            </div>
+        </div>
+    </header>
 
-        const catalogToggle = document.getElementById('catalogToggle');
-        const catalogMenu = document.getElementById('catalogMenu');
-        catalogToggle?.addEventListener('click', () => {
-            catalogMenu.classList.toggle('hidden');
-        });
+    <div id="category" class="category bg-white fixed z-[10] w-full">
+        <div
+            class="category-cart container mx-auto grid font-bold px-[20px] 2xl:px-[127px] pt-[100px] py-[20px] items-start flex items-center justify-center sm:grid grid-cols-3 md:grid-cols-5 gap-[10px]">
 
-    </script>
-    </body>
+        </div>
+    </div>
 
-</html>
+    <div id="menus" class="menus fixed top-0 z-[100] pt-[10px] bg-[white] left-0  w-full h-full">
+        <div id="close" class="flex items-center gap-[5px] pl-[10px]">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.5 7L9.5 12L14.5 17" stroke="#313436" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+            <p class="font-bold text-[24px]">Каталог</p>
+        </div>
+        <hr class="text-[#70C05B]">
+        <div class="flex pt-[25px] items-center justify-center px-[35px] pb-[5px]">
+            <input class="border-[1px] outline-none border-[#70C05B] px-[10px] w-full py-[5px] rounded-[5px]"
+                placeholder="Найти товар" type="search">
+        </div>
+        <ul class="flex px-[15px] flex-col py-[25px] gap-[7px] h-[480px] overflow-y-scroll">
+            <li>Молоко, сыр, яйцо</li>
+            <hr class="text-[#70C05B]">
+            <li>Хлеб</li>
+            <hr class="text-[#70C05B]">
+            <li>Фрукты и овощи</li>
+            <hr class="text-[#70C05B]">
+            <li>Замороженные продукты</li>
+            <hr class="text-[#70C05B]">
+            <li>Напитки</li>
+            <hr class="text-[#70C05B]">
+            <li>Кондитерские изделия</li>
+            <hr class="text-[#70C05B]">
+            <li>Чай, кофе</li>
+            <hr class="text-[#70C05B]">
+            <li>Бакалея</li>
+            <hr class="text-[#70C05B]">
+            <li>Здоровое питание</li>
+            <hr class="text-[#70C05B]">
+            <li>Зоотовары</li>
+            <hr class="text-[#70C05B]">
+            <li>Непродовольственные товары</li>
+            <hr class="text-[#70C05B]">
+            <li>Детское питание</li>
+            <hr class="text-[#70C05B]">
+            <li>Мясо, птица, колбаса</li>
+            <hr class="text-[#70C05B]">
+        </ul>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+        integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="../jc/kk.js"></script>
+        <script src="../jc/categry-data.js"></script>
+        <script src="../pages/katalog.html"></script>

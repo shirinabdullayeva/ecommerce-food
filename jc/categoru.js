@@ -1,21 +1,23 @@
-
-let new_vse_novinki = document.getElementById("vsenovinki");
-let new_vse_novinkis = products.filter((el) => el.discount > 0);
-let vse_novinki = products.splice(products.length - 3, products.length - 20);
-
-let new_kategoria = document.getElementById("kategoria");
-let new_vse_kategoria = products.filter((el) => el.discount === 0);
-let vse_kategoria = products.splice(products.length - 3, products.length - 18);
+let path = new URLSearchParams(location.search);
+let categoryCards = document.getElementById("categoryCards");
+let title = document.getElementById("title");
 
 
-function showproducts(content , data) {
-    console.log(content);
-    content.innerHTML = "";
-    data.map((el) => {
-        content.innerHTML += `
-           <div  class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
+let categoryName = path.get("categoryName");
+console.log(categoryName);
+title.textContent = categoryName
+// console.log(products);
+
+let filteredCategories = products.filter((el) => el.category === categoryName);
+
+console.log(filteredCategories);
+
+function showcategory(content, data){
+    data.map((el)=>{
+        content.innerHTML += `      
+    <div  class="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col">
                 <div class="relative">
-                    <img class="w-full h-[140px] sm:h-[202px]" src=${el.images[2]} alt="img">
+                    <img class="w-full h-[140px] rounded-t-2xl sm:h-[202px]" src=${el.images[2]} alt="img">
 
                      ${el.discount ? (
                 `<span class="absolute left-4 bottom-3 bg-red-500 text-white text-xs px-2 py-0.5 rounded-md font-semibold"> -${el.discount}%</span>`
@@ -37,9 +39,8 @@ function showproducts(content , data) {
                     <div class="flex flex-col gap-[5px] sm:gap-[8px]  pt-[4px] sm:pt-[8px] ">
                         <p class="text-[12px] sm:text-[16px] px-[8px] line-clamp-2">${el.description}</p>
                         </div>
-                         <div class="flex items-center my-1 space-x-2">
-        ${
-            el.rating === 5 ? `
+                         <div class="flex items-center my-1 space-x-2 px-2">
+        ${el.rating === 5 ? `
         
                         <img src="../assets/stars/star.png" alt="Rating star">
                         <img src="../assets/stars/star.png" alt="Rating star">
@@ -118,36 +119,23 @@ function showproducts(content , data) {
                         <img src="../assets/stars/star (1).png" alt="Rating star">
                         <img src="../assets/stars/star (1).png" alt="Rating star">
             `
-  }
-            </div>
-        ${
-            cart.find((items) => items.id === el.id) ? `
-             <div class = " w-full  grid grid-cols-3">
- <button class = "bg-[red] flex p-[15px] rounded-[5px] flex items-centr justify-center text-[18px] font-bold text-white"> - </button>
- <span class = "bg-white flex p-[15px] rounded-[5px]  flex items-centr justify-center text-[18px] font-bold "> ${cart.find((item) =>item.id === el.id)} </span>
- <button
- onClick="increase(${el.id})"
-  class = "bg-[green] flex p-[15px] rounded-[5px]   flex items-centr justify-center text-[18px] font-bold text-white"> + </button>
-</div> ` : `
-       <button
-                    onClick = "addToCart(${el.id})"  
-                    class="mt-auto border border-green-600 text-green-600 font-semibold rounded-lg py-2 w-full transition-all duration-300 hover:bg-orange-500 hover:border-orange-500 hover:text-white"> В корзину</button>
-                </div>
-`
-            }
+            } 
+                       
                  </div>
+                 <div class="px-2 py-3"  >
+                   <button
+                    onClick = "addToCart(${el.id})"  
+                    class="mt-auto border border-green-600 text-green-600 font-semibold rounded-lg py-2 w-full transition-all duration-300 hover:bg-orange-500 hover:border-orange-500 hover:text-white"> В корзину
+                   </button>
+                 </div>
+
+                   
+     </div>
     `;
-    
+
     })
 }
 
-
-showproducts(new_kategoria, vse_kategoria);
-showproducts(new_vse_novinki, vse_novinki);
-
-
-
-
-
+showcategory(categoryCards, filteredCategories);
 
 
