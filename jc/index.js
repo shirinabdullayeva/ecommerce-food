@@ -200,7 +200,7 @@ showProducts(newpromise, NewsliceProducts);
 
 
 
-// localStorage.setItem("carts", JSON.stringify(cart));
+
 function addToCart(id) {
   let item = products.find((el) => el.id === id);
   item.numbers = 1;
@@ -215,7 +215,7 @@ function addToCart(id) {
 
 
 
-// localStorage.setItem("carts", JSON.stringify(cart));
+
 function increase(id) {
   cart = cart.map((item) => {
     if (item.id === id) {
@@ -231,7 +231,7 @@ function increase(id) {
 }
 
 
-// localStorage.setItem("carts", JSON.stringify(cart));
+
 
 function decrease(id) {
   let item = cart.find((el) => el.id === id);
@@ -269,7 +269,6 @@ function addToLike(id) {
 
 }
 
-// localStorage.setItem("likes", JSON.stringify(like));
 
 function removeToLike(id) {
   like = like.filter((el) => el.id !== id);
